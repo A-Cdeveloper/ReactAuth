@@ -5,12 +5,12 @@ export async function middleware(NextRequest) {
   const authHeader = NextRequest.headers.get("authorization");
   const token = authHeader && authHeader.split(" ")[1];
 
-  if (
-    NextRequest.nextUrl.pathname.endsWith("/login") ||
-    NextRequest.nextUrl.pathname.endsWith("/register")
-  ) {
-    return NextResponse.next();
-  }
+  // if (
+  //   NextRequest.nextUrl.pathname.endsWith("/login") ||
+  //   NextRequest.nextUrl.pathname.endsWith("/register")
+  // ) {
+  //   return NextResponse.next();
+  // }
 
   if (token === null) {
     return NextResponse.json(
@@ -36,6 +36,7 @@ export async function middleware(NextRequest) {
       );
     }
   }
+  return NextResponse.next();
 }
 
 export const config = {
