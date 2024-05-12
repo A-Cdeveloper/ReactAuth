@@ -26,6 +26,7 @@ export async function middleware(NextRequest) {
       token,
       new TextEncoder().encode(process.env.ACCESS_TOKEN_SECRET)
     );
+    return NextResponse.next();
   } catch (error) {
     if (error.code === "ERR_JWS_INVALID") {
       return NextResponse.json(
@@ -36,7 +37,6 @@ export async function middleware(NextRequest) {
       );
     }
   }
-  return NextResponse.next();
 }
 
 export const config = {
