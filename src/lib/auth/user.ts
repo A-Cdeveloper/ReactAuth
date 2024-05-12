@@ -36,7 +36,7 @@ export const register = async ({
   email,
   password,
 }: RegisterType) => {
-  const response = await fetch(`${API}//register`, {
+  const response = await fetch(`${API}/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
