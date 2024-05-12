@@ -1,0 +1,385 @@
+###
+GET http://localhost:3000/api/users/
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWVsZCI6ImJpbGphbmFAZ21haWwuY29tIiwiaWF0IjoxNzE1NDYzODUyLCJleHAiOjE3MTU0Njc0NTJ9.4EZN9QWSBGFKM73lHjKkPkB5SLgQXWRsGq1mB0_TMbo
+
+
+###
+ GET http://localhost:3000/api/users/1
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWVsZCI6ImJpbGphbmFAZ21haWwuY29tIiwiaWF0IjoxNzE1NDYzODUyLCJleHAiOjE3MTU0Njc0NTJ9.4EZN9QWSBGFKM73lHjKkPkB5SLgQXWRsGq1mB0_TMbo
+
+
+
+###
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+  "firstname" : "Aleksandar", 
+  "lastname" : "Cvetkovic", 
+  "email" : "aleksandar@rixner.net", 
+  "password": "norbert3591"
+}
+
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email" : "aleksandar@rixner.net", 
+  "password": "norbert3591"
+}
+
+
+###
+POST http://localhost:3000/api/users/logout
+Content-Type: application/json
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWVsZCI6ImFsZWtzYW5kYXJAcml4bmVyLm5ldCIsImlhdCI6MTcxNTQ3MzkwMSwiZXhwIjoxNzE1NDc3NTAxfQ.b8w_QlsCqAm1SEEIoCzMfvW02jw9QCr0ivjUvuHInx0
+
+
+
+
+# ###
+# POST http://localhost:8080/users/logout
+# Content-Type: application/json
+
+# {
+#     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE2OTk5NzI3NjJ9.WzvgJSKvwtEhMV6BWqJO4vzn4iGsfYNTaRBPgJ9CwOo" 
+# }
+
+# ###
+# PATCH  http://localhost:8080/users/change-password/1
+# Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE2OTY5ODA3NzcsImV4cCI6MTY5NzA2NzE3N30.hjZejTA9oYik-CPDyhAofEe-CsTovi5X9mlS7Yu2ISM
+# Content-Type: application/json
+
+# {
+#     "newPassword": "norbert3591"
+# }
+
+
+# ###
+
+# POST  http://localhost:8080/users/refresh_token
+# Content-Type: application/json
+
+# {
+#     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE2OTk5NzMzODN9.nMo-NYkwbzrgzHkiLTymCfVouPNX1bhi43fcUNCbeok"
+# }
+
+# ### 
+# POST  http://localhost:8080/users/new
+# //Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE2OTY4OTIxNjMsImV4cCI6MTY5Njk3ODU2M30.ZZ7IBdyhL_ihG1JIKd-ZM5Ffb77cknaelVgbaSkZJHA
+# Content-Type: application/json
+
+# {
+#     "first_name": "Milos", 
+#     "last_name": "Sibinovic", 
+#     "username": "milos", 
+#     "email" : "aleksandar@e-vlasotince.info",
+#     "role": "user"
+# }
+
+
+
+# ###
+# DELETE  http://localhost:8080/users/50/delete
+
+
+# # ### 
+# # GET  http://localhost:8080/users/user-verify/12/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBlcmEiLCJpYXQiOjE2NzcxMDYwMTEsI88mV4cCI6MTY3NzEwOTYxMX0.B5sAL71IGKABaNncK9SCJcBgshtOkFA4Lk5zhAIGyts
+
+# ###
+# GET http://localhost:8080/clients/client_name=asc
+# Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE2OTY4NDcxNDJ9.1Ns2fjYu9gAumokXTYh6Lt1T7LwAL-V4zooTyZeIgPM
+
+
+
+# ###
+# GET http://localhost:8080/clients/filter/0/2/client_id=asc
+
+
+# ###
+# GET http://localhost:8080/clients/client/3
+
+# ###
+# POST http://localhost:8080/clients/new
+# Content-Type: application/json
+
+# {
+#      "client_name": "Test client Aleksan",
+#      "client_adresse": "strasse 89",
+#      "client_contact": "78945",
+#      "client_phone":"",
+#      "client_fax":"",
+#      "client_email": "alek@e-sem.com",
+#      "client_site": "www.client.com"
+# }
+
+
+# ###
+# DELETE  http://localhost:8080/clients/30/delete
+
+
+# ###
+
+# POST http://localhost:8080/clients/11/duplicate
+
+# ###
+# ##########################################################################################
+# GET http://localhost:8080/projects/project_end_date=desc
+
+# ###
+# GET http://localhost:8080/projects/filter/0/5/project_end_date=desc
+
+# ###
+# GET http://localhost:8080/projects/projectsbyclient/2
+
+# ###
+# GET http://localhost:8080/projects/project/14/
+
+# ###
+# GET http://localhost:8080/projects/project/888888888888
+
+# ###
+# POST http://localhost:8080/projects/new
+# Content-Type: application/json
+
+# {
+#   "project_client_id": 2,
+#   "project_name": "TEST DATE PR",
+#   "project_url": "http://psychosomatik-weiterbildung.de/",
+#   "project_platform": "WORDPRESS",
+#   "project_hosting": "other",
+#   "project_description": "https://vivenio.psychosomatik-weiterbildung.de/",
+#   "project_ftpdata": "",
+#   "project_dbdata": "",
+#   "project_start_date": "2023-09-26T20:00",
+#   "project_end_date": "2023-09-26T20:00",
+#   "project_status": "online"
+# }
+
+
+# ###
+# PATCH  http://localhost:8080/projects/202/edit
+# Content-Type: application/json
+
+# {
+#   "project_id": 202,
+#   "project_client_id": 2,
+#   "project_name": "TEST",
+#   "project_url": "http://psychosomatik-weiterbildung.de/",
+#   "project_platform": "WORDPRESS",
+#   "project_update": "",
+#   "project_last_update": "",
+#   "project_hosting": "other",
+#   "project_description": "https://vivenio.psychosomatik-weiterbildung.de/",
+#   "project_ftpdata": "",
+#   "project_dbdata": "",
+#   "project_start_date": "2017-01-29T23:00:00.000Z",
+#   "project_end_date": "2017-07-26T22:00:00.000Z",
+#   "project_status": "online",
+#   "project_online": "Ja"
+# }
+
+
+# ####
+# POST http://localhost:8080/projects/308/duplicate
+
+
+# #####################################################
+# ##########################################################################################################
+
+# ####
+# GET http://localhost:8080/tasks/tasks/2023-08-01/2023-09-30
+
+
+# ###
+# GET http://localhost:8080/tasks/filter/0/3/2023-09-01/2023-09-30
+
+# ###
+# GET http://localhost:8080/tasks/tasksbyclient/23
+
+# ###
+# GET http://localhost:8080/tasks/tasksbyproject/2
+
+
+# ###
+# GET http://localhost:8080/tasks/task/5000000
+# Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE3MDA4MjUwNDh9.phGukrtnfaKkq7mdnceZvqR1-lcIahgaqlc87-Oz33A
+
+
+# ###
+# DELETE  http://localhost:8080/tasks/3/delete
+
+
+# ###
+
+# POST http://localhost:8080/tasks/4/duplicate
+
+
+
+# ###
+# POST http://localhost:8080/tasks/new
+# Content-Type: application/json
+
+# {
+#   "task_project_id": 100,
+#      "task_name": "Test task Aleksan",
+#      "task_description": "test",
+#      "task_notice": "",
+#      "task_add_date":"2017-01-29T23:00:00.000Z",
+#      "task_status":"open"
+# }
+
+
+# ###
+# PATCH  http://localhost:8080/tasks/1278/edit
+# Content-Type: application/json
+
+# # {
+
+# #      "task_name": "Test task Aleksan EDIT",
+# #      "task_description": "test",
+# #      "task_notice": "",
+# #      "task_start_time":"2023-10-05T23:00:00.000Z",
+# #      "task_status":"closed"
+# # }
+
+# {
+#   "task_price_per_hour": "regular", 
+#   "task_client_adresse": "test adr", 
+#   "task_status": "invoiced"
+# }
+
+
+
+
+# ###############################################################
+# ###############################################################
+# ###############################################################
+# ###############################################################
+# ####
+# GET http://localhost:8080/settings/
+# Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE2OTY4NDc1NjksImV4cCI6MTY5Njg1MTE2OX0.RE21iCnGantzaE0u3q_tW5nYxpZH3y9F2n7RxqytBUA
+
+# ###
+# PATCH http://localhost:8080/settings/edit
+# Content-Type: application/json
+# Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZWtzYW5kYXIiLCJpYXQiOjE2OTY4NTA4OTksImV4cCI6MTY5Njg1NDQ5OX0.Mba0p_-CRjHccyjE-WMHheZy0e-4lY6lKG5Lc4iaibs
+
+# {
+#   "clients_per_page": 20,
+#   "projects_per_page": 20,
+#   "tasks_per_page": 20,
+#   "users_per_page": 20
+# }
+
+
+# //////////////////////////////////////////////////////////////////////
+# ###
+# POST http://localhost:8080/upload
+
+
+# //////////////////////////////////////////////////////////////////////////
+
+# ###
+# GET http://localhost:8080/services/service_name=desc
+
+
+# ###
+# GET http://localhost:8080/services/filter/0/2/service_name=asc
+
+
+# ###
+# POST http://localhost:8080/services/new
+# Content-Type: application/json
+
+# {
+#  "service_name":"test servis", 
+#  "service_description":"test service description", 
+#  "service_price":"150", 
+#  "service_type":"basic"
+# }
+
+
+# ###
+# PATCH  http://localhost:8080/services/51/edit
+# Content-Type: application/json
+
+# {
+
+#  "service_name":"test servis 455555", 
+#  "service_description":"test service description", 
+#  "service_price":"250", 
+#  "service_type":"basic"
+# }
+
+
+# ###
+# DELETE  http://localhost:8080/services/49/delete
+
+
+# ###
+
+# POST http://localhost:8080/services/49/duplicate
+
+
+
+
+# ###
+# GET http://localhost:8080/offers/offer_id=asc
+
+
+# ###
+# GET http://localhost:8080/offers/filter/0/2/offer_id=asc
+
+
+# ###
+# GET http://localhost:8080/offers/offer/74
+
+
+# ###
+# POST http://localhost:8080/offers/new
+# Content-Type: application/json
+
+# {
+#     "offer_number":"011-2023",
+#     "offer_client_id": 3,
+#     "offer_client_adresse": "Aleksandar adresse",
+#     "offer_project_id": 62,
+#     "offer_type": "basic",
+#     "offer_extra": "PHP-HTML Programmierung",
+#     "offer_date": "2023-10-18",
+#     "offer_pdf": "offer-018-19.pdf",
+#     "services": "[{ "service_id": 30, "qty_price_hour": 0, "qty_price_total": 1 },{ "service_id": 3, "qty_price_hour": 10,"qty_price_total": 0 }]"
+# }
+
+
+# ###
+# PATCH  http://localhost:8080/offers/78999/edit
+# Content-Type: application/json
+
+# {
+# "offer_client_id": 1
+# }
+
+
+# ###
+# DELETE  http://localhost:8080/offers/69/delete
+
+
+# ###
+
+# POST http://localhost:8080/offers/28/duplicate
+
+
+
+# ###
+# PATCH  http://localhost:8080/managedb/backup
+
+# ###
+# POST  http://localhost:8080/managedb/initial-state
+
+# ###
+# POST  http://localhost:8080/managedb/restore
+
