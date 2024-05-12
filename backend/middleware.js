@@ -5,11 +5,23 @@ export async function middleware(NextRequest) {
   const authHeader = NextRequest.headers.get("authorization");
   const token = authHeader && authHeader.split(" ")[1];
 
+  const res = NextResponse.next();
+  res.headers.append("Access-Control-Allow-Credentials", "true");
+  res.headers.append("Access-Control-Allow-Origin", "*");
+  res.headers.append(
+    "Access-Control-Allow-Methods",
+    "GET,DELETE,PATCH,POST,PUT,OPTIONS"
+  );
+  res.headers.append(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Authorisation, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
+
   if (
     NextRequest.nextUrl.pathname.endsWith("/login") ||
     NextRequest.nextUrl.pathname.endsWith("/register")
   ) {
-    return NextResponse.next();
+    return res;
   }
 
   if (token === null) {
@@ -26,7 +38,6 @@ export async function middleware(NextRequest) {
       token,
       new TextEncoder().encode(process.env.ACCESS_TOKEN_SECRET)
     );
-    return NextResponse.next();
   } catch (error) {
     if (error.code === "ERR_JWS_INVALID") {
       return NextResponse.json(

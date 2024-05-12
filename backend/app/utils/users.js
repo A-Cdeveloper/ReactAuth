@@ -29,7 +29,7 @@ export const loginUser = (accessToken, refreshToken, id) => {
 };
 
 export const logoutUser = (accessToken) => {
-  console.log(accessToken);
+  // console.log(accessToken);
   const stmt = db.prepare(
     "UPDATE users SET accesToken=NULL, refreshToken=NULL WHERE accesToken = ?"
   );
