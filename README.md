@@ -1,3 +1,4 @@
 ## User Auth APP - Frontend
 
-React Vite app.
+React Vite app - front
+Backend - Next js
